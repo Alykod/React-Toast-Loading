@@ -1,5 +1,4 @@
 import React from 'react';
-import './GlobalHelper.css';
 export declare type ContextValue = {
     addToast: (content: ToastMessage) => number;
     removeToast: (id: number) => void;
