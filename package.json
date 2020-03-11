@@ -1,0 +1,44 @@
+{
+  "name": "react-loading-toast",
+  "version": "1.0.0",
+  "description": "Toasts and loading overlay using react hooks and the context api",
+  "main": "dist/index.js",
+  "keywords": [
+    "toast",
+    "react",
+    "loading",
+    "overlay",
+    "hooks"
+  ],
+  "scripts": {
+    "build": "rollup -c",
+    "start": "rollup -c -w"
+  },
+  "author": "Aly Abdelrahman",
+  "license": "MIT",
+  "types": "dist/index.d.ts",
+  "devDependencies": {
+    "@types/react": "^16.9.23",
+    "@types/react-dom": "^16.9.5",
+    "babel-core": "^6.26.3",
+    "babel-runtime": "^6.26.0",
+    "react": "^16.13.0",
+    "react-dom": "^16.13.0",
+    "rollup": "^1.29.0",
+    "rollup-plugin-postcss": "^2.4.1",
+    "rollup-plugin-sass": "^1.2.2",
+    "rollup-plugin-typescript2": "^0.25.3",
+    "typescript": "^3.8.3"
+  },
+  "peerDependencies": {
+    "react": ">= 16.8.0 < 2",
+    "react-dom": ">= 16.8.0 < 2"
+  },
+  "repository": {
+    "url": "https://github.com/Alykod/React-Loading-Toast",
+    "type": "git"
+  },
+  "files": [
+    "dist"
+  ]
+}
