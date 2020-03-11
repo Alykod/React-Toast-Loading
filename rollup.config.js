@@ -1,6 +1,6 @@
 import postcss from 'rollup-plugin-postcss';
 import typescript from 'rollup-plugin-typescript2'
-
+import './src/GlobalHelper.css'
 import pkg from './package.json'
 
 export default {
@@ -15,7 +15,7 @@ export default {
     }
   ],
   plugins: [postcss({
-    extract: true,
+    extract: false,
     modules: true,
   }), typescript({ objectHashIgnoreUnknownHack: true })],
   external: ['react', 'react-dom']
