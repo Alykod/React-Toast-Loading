@@ -18,6 +18,6 @@ export default {
     extract: false,
     modules: true,
     use: ['sass'],
-  }), typescript()],
+  }), typescript({ objectHashIgnoreUnknownHack: true })],
   external: ['react', 'react-dom']
 }

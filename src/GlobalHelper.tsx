@@ -3,7 +3,7 @@ import { createPortal } from 'react-dom';
 import './GlobalHelper.css'
 
 
-interface ContextValue {
+export type ContextValue  = {
     /** Returns Id if you want to remove toast without pressing or waiting on time out */
     addToast: (content: ToastMessage) => number;
     removeToast: (id: number) => void;
@@ -13,22 +13,22 @@ interface ContextValue {
     removeAllHelpers: () => void;
 }
 
-interface ToastMessage {
+export type ToastMessage =  {
     title?: string,
     body?: string
 }
-interface ToastState {
+export type ToastState = {
     toastId: number
     message?: {
         title?: string,
         body?: string
     }
 }
-interface ToastInterface {
+export type ToastInterface = {
     toasts: ToastState[];
 }
 
-interface OverLayProps {
+export type OverLayProps = {
     /** Color of overlay background */
     overLayColor?: string;
     /** If you have a specific component in mind for the center such as a spinner or loadingbar */
@@ -37,11 +37,11 @@ interface OverLayProps {
     overLayStyle?: object;
 }
 
-interface OverLayContainer extends OverLayProps {
+export interface OverLayContainer extends OverLayProps {
     overLay: boolean
 }
 
-interface ToastProps {
+export interface ToastProps {
     /** If you want to add a unique toast element such as bootstrap or custom component. Must Contain a title and a body or no message will show unless you have a default in the component */
     defaultToast?: React.FC;
     /** if you want to modify the default toast style, use this */
@@ -52,12 +52,12 @@ interface ToastProps {
     toastLocation?: "top-right" | "top-left" | "bottom-right" | "bottom-left" | "center-right" | "center-left";
 }
 
-interface GlobalHelperProvider extends OverLayProps, ToastProps {
+export interface GlobalHelperProvider extends OverLayProps, ToastProps {
     /** React Children */
     children: React.ReactNode;
 }
 
-interface ToastContainerProps extends ToastInterface, ToastProps {}
+export interface ToastContainerProps extends ToastInterface, ToastProps {}
 
 export const GlobalHelperContext = React.createContext<Partial<ContextValue>>({});
 
