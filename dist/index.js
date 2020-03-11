@@ -29,36 +29,6 @@ function __spreadArrays() {
     return r;
 }
 
-function styleInject(css, ref) {
-  if ( ref === void 0 ) ref = {};
-  var insertAt = ref.insertAt;
-
-  if (!css || typeof document === 'undefined') { return; }
-
-  var head = document.head || document.getElementsByTagName('head')[0];
-  var style = document.createElement('style');
-  style.type = 'text/css';
-
-  if (insertAt === 'top') {
-    if (head.firstChild) {
-      head.insertBefore(style, head.firstChild);
-    } else {
-      head.appendChild(style);
-    }
-  } else {
-    head.appendChild(style);
-  }
-
-  if (style.styleSheet) {
-    style.styleSheet.cssText = css;
-  } else {
-    style.appendChild(document.createTextNode(css));
-  }
-}
-
-var css_248z = "/* svg style from Glenn Mccomb https://glennmccomb.com/articles/building-a-pure-css-animated-svg-spinner/ */\r\n\r\n.GlobalHelper_svgCircle__3nAl7 {\r\n  animation: 2s linear infinite :local(circle-animation);\r\n  max-width: 200px;\r\n}\r\n\r\n@keyframes GlobalHelper_circle-animation__2qTAd {\r\n  0% {\r\n    transform: rotateZ(0deg);\r\n  }\r\n  100% {\r\n    transform: rotateZ(360deg);\r\n  }\r\n}\r\n\r\n.GlobalHelper_svgInnerCircle__3NPlp {\r\n  animation: 5s ease-in-out infinite both :local(innercircle-animation);\r\n  display: block;\r\n  fill: transparent;\r\n  stroke: #ffff;\r\n  stroke-linecap: round;\r\n  stroke-dasharray: 283;\r\n  stroke-dashoffset: 280;\r\n  stroke-width: 10px;\r\n  transform-origin: 50% 50%;\r\n}\r\n\r\n@keyframes GlobalHelper_innercircle-animation__2yNfc {\r\n  0%,\r\n  25% {\r\n    stroke-dashoffset: 280;\r\n    transform: rotate(0);\r\n  }\r\n\r\n  50%,\r\n  75% {\r\n    stroke-dashoffset: 75;\r\n    transform: rotate(45deg);\r\n  }\r\n\r\n  100% {\r\n    stroke-dashoffset: 280;\r\n    transform: rotate(360deg);\r\n  }\r\n}\r\n\r\n.GlobalHelper_container-style__1H2fj {\r\n  z-index: 999;\r\n  position: absolute;\r\n}\r\n\r\n.GlobalHelper_toast-style__2e4nX {\r\n  background-color: #ffff;\r\n  border: 1px solid rgb(70, 67, 67);\r\n  width: 20vw;\r\n  height: 5vh;\r\n  margin: 1em;\r\n  text-align: center;\r\n  box-shadow: 5px 5px rgb(233, 230, 230) ;\r\n  opacity: .7;\r\n  cursor: pointer;\r\n}\r\n\r\n.GlobalHelper_toast-title__1I8LQ {\r\n}\r\n\r\n.GlobalHelper_toast-title-text__2URxU {\r\n    font-size: medium;\r\n\r\n}\r\n\r\n.GlobalHelper_toast-body___uYXc {\r\n\r\n}\r\n\r\n.GlobalHelper_toast-body-text__3qIOz {\r\n    font-size: small;\r\n}\r\n\r\n.GlobalHelper_top-right__1sY_2 {\r\n    top: 0;\r\n    right: 0;\r\n} \r\n.GlobalHelper_top-left__3NgqQ {\r\n    top: 0;\r\n    left: 0;\r\n} \r\n\r\n.GlobalHelper_bottom-right__1ylyX {\r\n    bottom: 0;\r\n    right: 0;\r\n}\r\n.GlobalHelper_bottom-left__2s4wI {\r\n    bottom: 0;\r\n    left: 0;\r\n}\r\n.GlobalHelper_center-right__7Cmcp {\r\n    bottom: 50vh;\r\n    right: 0;\r\n}\r\n.GlobalHelper_center-left__3bqXS{\r\n    bottom: 50vh;\r\n    left: 0;\r\n}";
-styleInject(css_248z);
-
 var GlobalHelperContext = React__default.createContext({});
 var id = 0;
 var GlobalHelperProvider = function (props) {
