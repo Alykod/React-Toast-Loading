@@ -1,6 +1,6 @@
 {
   "name": "react-loading-toast",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Toasts and loading overlay using react hooks and the context api",
   "main": "dist/index.js",
   "keywords": [
@@ -16,7 +16,7 @@
   },
   "author": "Aly Abdelrahman",
   "license": "MIT",
-  "types": "dist/index.d.ts",
+  "types": "dist/GlobalHelper.d.ts",
   "devDependencies": {
     "@types/react": "^16.9.23",
     "@types/react-dom": "^16.9.5",
