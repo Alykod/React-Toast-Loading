@@ -1,6 +1,6 @@
 {
   "name": "react-loading-toast",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Toasts and loading overlay using react hooks and the context api",
   "main": "dist/index.js",
   "keywords": [
