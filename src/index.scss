@@ -18,7 +18,7 @@
   animation: 5s ease-in-out infinite both innercircle-animation;
   display: block;
   fill: transparent;
-  stroke: #ffff;
+  stroke: rgb(255, 255, 255);
   stroke-linecap: round;
   stroke-dasharray: 283;
   stroke-dashoffset: 280;
@@ -51,7 +51,7 @@
 }
 
 .toast-style {
-  background-color: #ffff;
+  background-color: rgb(255, 255, 255);
   border: 1px solid rgb(70, 67, 67);
   width: 20vw;
   height: 5vh;

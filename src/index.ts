@@ -1,3 +1,2 @@
-import {GlobalHelperProvider, useGlobalHelper} from './GlobalHelper';
 
-export {GlobalHelperProvider, useGlobalHelper} 
+// export {GlobalHelperProvider, useGlobalHelper} from './GlobalHelper';

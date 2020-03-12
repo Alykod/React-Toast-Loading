@@ -1,3 +1,21 @@
+
+
+function ___$insertStyle(css) {
+  if (!css) {
+    return;
+  }
+  if (typeof window === 'undefined') {
+    return;
+  }
+
+  var style = document.createElement('style');
+
+  style.setAttribute('type', 'text/css');
+  style.innerHTML = css;
+  document.head.appendChild(style);
+  return css;
+}
+
 Object.defineProperty(exports, '__esModule', { value: true });
 
 function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
@@ -28,6 +46,8 @@ function __spreadArrays() {
             r[k] = a[j];
     return r;
 }
+
+___$insertStyle("/* svg style from Glenn Mccomb https://glennmccomb.com/articles/building-a-pure-css-animated-svg-spinner/ */\n.svgCircle {\n  animation: 2s linear infinite circle-animation;\n  max-width: 200px;\n}\n\n@keyframes circle-animation {\n  0% {\n    transform: rotateZ(0deg);\n  }\n  100% {\n    transform: rotateZ(360deg);\n  }\n}\n.svgInnerCircle {\n  animation: 5s ease-in-out infinite both innercircle-animation;\n  display: block;\n  fill: transparent;\n  stroke: white;\n  stroke-linecap: round;\n  stroke-dasharray: 283;\n  stroke-dashoffset: 280;\n  stroke-width: 10px;\n  transform-origin: 50% 50%;\n}\n\n@keyframes innercircle-animation {\n  0%, 25% {\n    stroke-dashoffset: 280;\n    transform: rotate(0);\n  }\n  50%, 75% {\n    stroke-dashoffset: 75;\n    transform: rotate(45deg);\n  }\n  100% {\n    stroke-dashoffset: 280;\n    transform: rotate(360deg);\n  }\n}\n.container-style {\n  z-index: 999;\n  position: absolute;\n}\n\n.toast-style {\n  background-color: white;\n  border: 1px solid #464343;\n  width: 20vw;\n  height: 5vh;\n  margin: 1em;\n  text-align: center;\n  box-shadow: 5px 5px #e9e6e6;\n  opacity: 0.7;\n  cursor: pointer;\n}\n\n.toast-title-text {\n  font-size: medium;\n}\n\n.toast-body-text {\n  font-size: small;\n}\n\n.top-right {\n  top: 0;\n  right: 0;\n}\n\n.top-left {\n  top: 0;\n  left: 0;\n}\n\n.bottom-right {\n  bottom: 0;\n  right: 0;\n}\n\n.bottom-left {\n  bottom: 0;\n  left: 0;\n}\n\n.center-right {\n  bottom: 50vh;\n  right: 0;\n}\n\n.center-left {\n  bottom: 50vh;\n  left: 0;\n}");
 
 var GlobalHelperContext = React__default.createContext({});
 var id = 0;
@@ -124,6 +144,7 @@ var SpinnerSVG = function () {
         React__default.createElement("circle", { className: "svgInnerCircle", cx: "100", cy: "100", r: "90" })));
 };
 
+exports.GlobalHelperContext = GlobalHelperContext;
 exports.GlobalHelperProvider = GlobalHelperProvider;
 exports.useGlobalHelper = useGlobalHelper;
 //# sourceMappingURL=index.js.map

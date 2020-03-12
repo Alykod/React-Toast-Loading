@@ -1,9 +1,9 @@
-import postcss from 'rollup-plugin-postcss';
+import sass from 'rollup-plugin-sass'
 import typescript from 'rollup-plugin-typescript2'
 import pkg from './package.json'
 
 export default {
-  input: 'src/index.ts',
+  input: 'src/GlobalHelper.tsx',
   output: [
     {
       file: pkg.main,
@@ -13,8 +13,6 @@ export default {
       strict: false
     }
   ],
-  plugins: [postcss({
-    extract: true,
-  }), typescript({ objectHashIgnoreUnknownHack: true })],
+  plugins: [sass({ insert: true }), typescript()],
   external: ['react', 'react-dom']
 }
