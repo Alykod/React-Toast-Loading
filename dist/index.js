@@ -50,19 +50,23 @@ function __spreadArrays() {
 ___$insertStyle("/* svg style from Glenn Mccomb https://glennmccomb.com/articles/building-a-pure-css-animated-svg-spinner/ */\n.svgCircle {\n  animation: 2s linear infinite circle-animation;\n  max-width: 200px;\n}\n\n@keyframes circle-animation {\n  0% {\n    transform: rotateZ(0deg);\n  }\n  100% {\n    transform: rotateZ(360deg);\n  }\n}\n.svgInnerCircle {\n  animation: 5s ease-in-out infinite both innercircle-animation;\n  display: block;\n  fill: transparent;\n  stroke: white;\n  stroke-linecap: round;\n  stroke-dasharray: 283;\n  stroke-dashoffset: 280;\n  stroke-width: 10px;\n  transform-origin: 50% 50%;\n}\n\n@keyframes innercircle-animation {\n  0%, 25% {\n    stroke-dashoffset: 280;\n    transform: rotate(0);\n  }\n  50%, 75% {\n    stroke-dashoffset: 75;\n    transform: rotate(45deg);\n  }\n  100% {\n    stroke-dashoffset: 280;\n    transform: rotate(360deg);\n  }\n}\n.container-style {\n  z-index: 999;\n  position: absolute;\n}\n\n.toast-style {\n  background-color: white;\n  border: 1px solid #464343;\n  width: 20vw;\n  height: 5vh;\n  margin: 1em;\n  text-align: center;\n  box-shadow: 5px 5px #e9e6e6;\n  opacity: 0.7;\n  cursor: pointer;\n}\n\n.toast-title-text {\n  font-size: medium;\n}\n\n.toast-body-text {\n  font-size: small;\n}\n\n.top-right {\n  top: 0;\n  right: 0;\n}\n\n.top-left {\n  top: 0;\n  left: 0;\n}\n\n.bottom-right {\n  bottom: 0;\n  right: 0;\n}\n\n.bottom-left {\n  bottom: 0;\n  left: 0;\n}\n\n.center-right {\n  bottom: 50vh;\n  right: 0;\n}\n\n.center-left {\n  bottom: 50vh;\n  left: 0;\n}");
 
 var GlobalHelperContext = React__default.createContext({});
-var id = 0;
+var generateId = function () {
+    return Math.floor(Math.random() * 1000000);
+};
 var GlobalHelperProvider = function (props) {
     var _a = React.useState([]), toasts = _a[0], setToasts = _a[1];
     var _b = React.useState(false), overLay = _b[0], setOverLay = _b[1];
     var _c = React.useState([]), idleToasts = _c[0], setIdleToasts = _c[1];
     var addToast = React.useCallback(function (message) {
         if (overLay) {
-            setIdleToasts(function (idleToasts) { return __spreadArrays(idleToasts, [{ "toastId": id++, message: message }]); });
-            return id;
+            var id_1 = generateId();
+            setIdleToasts(function (idleToasts) { return __spreadArrays(idleToasts, [{ "toastId": id_1, message: message }]); });
+            return id_1;
         }
         else {
-            setToasts(function (toasts) { return __spreadArrays(toasts, [{ "toastId": id++, message: message }]); });
-            return id;
+            var id_2 = generateId();
+            setToasts(function (toasts) { return __spreadArrays(toasts, [{ "toastId": id_2, message: message }]); });
+            return id_2;
         }
     }, [overLay]);
     var removeToast = React.useCallback(function (id) {

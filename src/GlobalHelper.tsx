@@ -2,7 +2,6 @@ import React, { useState, useContext, useEffect, useCallback, CSSProperties } fr
 import { createPortal } from 'react-dom';
 import './index.scss'
 
-
 export type ContextValue  = {
     /** Returns Id if you want to remove toast without pressing or waiting on time out */
     addToast: (content: ToastMessage) => number;
@@ -61,8 +60,9 @@ export interface ToastContainerProps extends ToastInterface, ToastProps {}
 
 export const GlobalHelperContext = React.createContext<Partial<ContextValue>>({});
 
-
-let id = 0;
+const generateId = () => {
+ return Math.floor(Math.random() * 1000000)
+}
 
 export const GlobalHelperProvider = (props: GlobalHelperProvider) => {
     const [toasts, setToasts] = useState<ToastState[]>([]);
@@ -71,11 +71,13 @@ export const GlobalHelperProvider = (props: GlobalHelperProvider) => {
 
     const addToast = useCallback((message: any) => {
         if (overLay) {
-            setIdleToasts(idleToasts => [...idleToasts, { "toastId": id++, message: message }])
+            let id = generateId();
+            setIdleToasts(idleToasts => [...idleToasts, { "toastId": id, message: message }])
             return id
         }
         else {
-            setToasts(toasts => [...toasts, { "toastId": id++, message: message }]);
+            let id = generateId();
+            setToasts(toasts => [...toasts, { "toastId": id, message: message }]);
             return id;
         }
     }, [overLay]);
