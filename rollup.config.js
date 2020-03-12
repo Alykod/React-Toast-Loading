@@ -15,7 +15,6 @@ export default {
   ],
   plugins: [postcss({
     extract: true,
-    modules: true,
   }), typescript({ objectHashIgnoreUnknownHack: true })],
   external: ['react', 'react-dom']
 }

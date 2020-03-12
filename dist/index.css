@@ -1,11 +1,11 @@
 /* svg style from Glenn Mccomb https://glennmccomb.com/articles/building-a-pure-css-animated-svg-spinner/ */
 
-.GlobalHelper_svgCircle__3nAl7 {
-  animation: 2s linear infinite :local(circle-animation);
+.svgCircle {
+  animation: 2s linear infinite circle-animation;
   max-width: 200px;
 }
 
-@keyframes GlobalHelper_circle-animation__2qTAd {
+@keyframes circle-animation {
   0% {
     transform: rotateZ(0deg);
   }
@@ -14,8 +14,8 @@
   }
 }
 
-.GlobalHelper_svgInnerCircle__3NPlp {
-  animation: 5s ease-in-out infinite both :local(innercircle-animation);
+.svgInnerCircle {
+  animation: 5s ease-in-out infinite both innercircle-animation;
   display: block;
   fill: transparent;
   stroke: #ffff;
@@ -26,7 +26,7 @@
   transform-origin: 50% 50%;
 }
 
-@keyframes GlobalHelper_innercircle-animation__2yNfc {
+@keyframes innercircle-animation {
   0%,
   25% {
     stroke-dashoffset: 280;
@@ -45,12 +45,12 @@
   }
 }
 
-.GlobalHelper_container-style__1H2fj {
+.container-style {
   z-index: 999;
   position: absolute;
 }
 
-.GlobalHelper_toast-style__2e4nX {
+.toast-style {
   background-color: #ffff;
   border: 1px solid rgb(70, 67, 67);
   width: 20vw;
@@ -62,44 +62,44 @@
   cursor: pointer;
 }
 
-.GlobalHelper_toast-title__1I8LQ {
+.toast-title {
 }
 
-.GlobalHelper_toast-title-text__2URxU {
+.toast-title-text {
     font-size: medium;
 
 }
 
-.GlobalHelper_toast-body___uYXc {
+.toast-body {
 
 }
 
-.GlobalHelper_toast-body-text__3qIOz {
+.toast-body-text {
     font-size: small;
 }
 
-.GlobalHelper_top-right__1sY_2 {
+.top-right {
     top: 0;
     right: 0;
 } 
-.GlobalHelper_top-left__3NgqQ {
+.top-left {
     top: 0;
     left: 0;
 } 
 
-.GlobalHelper_bottom-right__1ylyX {
+.bottom-right {
     bottom: 0;
     right: 0;
 }
-.GlobalHelper_bottom-left__2s4wI {
+.bottom-left {
     bottom: 0;
     left: 0;
 }
-.GlobalHelper_center-right__7Cmcp {
+.center-right {
     bottom: 50vh;
     right: 0;
 }
-.GlobalHelper_center-left__3bqXS{
+.center-left{
     bottom: 50vh;
     left: 0;
 }
