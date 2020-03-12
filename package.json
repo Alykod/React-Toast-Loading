@@ -1,6 +1,6 @@
 {
   "name": "react-loading-toast",
-  "version": "1.2.3",
+  "version": "1.2.4",
   "description": "Toasts and loading overlay using react hooks and the context api",
   "main": "dist/index.js",
   "keywords": [
@@ -35,7 +35,7 @@
     "react-dom": ">= 16.8.0 < 2"
   },
   "repository": {
-    "url": "https://github.com/Alykod/React-Loading-Toast",
+    "url": "https://github.com/Alykod/React-Toast-Loading",
     "type": "git"
   },
   "files": [

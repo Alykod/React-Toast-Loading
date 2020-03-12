@@ -1,6 +1,6 @@
 import React, { useState, useContext, useEffect, useCallback, CSSProperties } from 'react';
 import { createPortal } from 'react-dom';
-// import './GlobalHelper.css'
+import './GlobalHelper.css'
 
 
 export type ContextValue  = {
