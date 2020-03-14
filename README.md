@@ -9,62 +9,65 @@ Using react context, the "Provider" needs to be wrapped around your application.
 
 This package was build using Typescript<br />
 
-### Available parameters
+
+## If you are interested in trying this packaage, I have created a code sandbox for it;
+
+[codeSandBox](https://codesandbox.io/s/react-loading-toast-ptlzz)
+
+# Available parameters
 
 Launches the test runner in the interactive watch mode.<br />
-**GlobalHelperProvider**
+## GlobalHelperProvider
 
-<GlobalHelperProvider>
+`<GlobalHelperProvider>`
 
 Wraps around your application (similar to navigation or redux store)<br/>
 Takes the following parameters:
 
-overLayColor (String) Optional
+`overLayColor` (String) Optional
 Color of overlay background<br/>
 
-overLayComponent (Component) Optional
+`overLayComponent` (Component) Optional
 If you have a specific component in mind for the center such as a spinner or loadingbar <br/> 
 
-overLayStyle (Style Object) Optional
+`overLayStyle` (Style Object) Optional
 Style for the Loading page <br/>
 
-defaultToast (Component) Optional
+`defaultToast` (Component) Optional
 If you want to add a unique toast element such as bootstrap or custom component. Must Contain a title and a body or no message will show unless you have a default in the component<br/>
 
-toastStyle (Style Object) Optional
+`toastStyle` (Style Object) Optional
 if you want to modify the default toast style, use this <br/>
 
-toastTimeOut (Number) Optional
+`toastTimeOut` (Number) Optional
 Timer for auto dimiss toasts in ms <br/>
 
-toastLocation ("top-right" | "top-left" | "bottom-right" | "bottom-left" | "center-right" | "center-left") Optional
+`toastLocation` ("top-right" | "top-left" | "bottom-right" | "bottom-left" | "center-right" | "center-left") Optional
 Locations of the toast on the screen <br/>
 
-children * Whatever is wrapped
 
 
-
-**useGlobalHelper**
+## useGlobalHelper
 
 useGlobalHelper is a hook that can be used on components to access toasting or overlaying. 
 
 it can return the following functionality
 
-addToast() 
+`addToast() `
 returns id
 accepts message object which expects a title and body for the toast<br/>
 
-removeToast()
+`removeToast()`
 accepts id and dismisses the toast<br/>
 
-addOverLay()
+`addOverLay()`
 adds overlay to the application <br/>
 
-removeOverLay()
+`removeOverLay()`
 dismisses the overLay <br/>
 
-removeAllToasts()
+`removeAllToasts()`
 dismisses all the toasts <br/>
 
-removeAllHelper()
+`removeAllHelper()`
 dismisses all the toasts and the overLay<br/>

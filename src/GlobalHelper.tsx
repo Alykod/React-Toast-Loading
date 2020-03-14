@@ -124,7 +124,7 @@ const Toaster = (props: any) => {
     useEffect(() => {
         const timeout = setTimeout(() => {
             removeToast(props.toast.toastId);
-        }, props.Timeout || 6000)
+        }, props.toastTimeOut || 6000)
 
         return () => {
             clearTimeout(timeout)
